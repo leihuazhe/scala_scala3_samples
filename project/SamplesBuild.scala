@@ -6,14 +6,23 @@ object SamplesBuild extends Build with JavaAppKeys {
 
   object Deps {
     val commons_codec = "commons-codec" % "commons-codec" % "1.10"
+    val spark_client = "org.apache.spark" %% "spark-sql" % "2.4.0"
   }
 
-
+  /**
+    * 在左边，name， version 和 scalaVersion 都是 键（keys）。
+    * 一个键（key）就是一个 SettingKey[T]，TaskKey[T] 或者 InputKey[T] 的实例，
+    * T 是期望的 value 的类型。 key 的类别将在下面讲解。
+    *
+    * <code>:=</code>  返回 Setting[T] 的
+    */
   lazy val `scala-samples` = (project in file("."))
     .settings(
       name := "scala_samples",
       libraryDependencies ++= excludedDeps(
-        Deps.commons_codec
+        Deps.commons_codec,
+        Deps.spark_client
+        
       ) ++ Seq(
       )
     )
