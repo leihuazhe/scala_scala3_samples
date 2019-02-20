@@ -6,22 +6,25 @@ object SamplesBuild extends Build with JavaAppKeys {
 
   object Deps {
     val commons_codec = "commons-codec" % "commons-codec" % "1.10"
-      val spark_client = "org.apache.spark" %% "spark-sql" % "2.4.0"
+    val spark_client = "org.apache.spark" %% "spark-sql" % "2.4.0"
+
+    val play_json = "com.typesafe.play" %% "play-json" % "2.5.4"
   }
 
-    lazy val `spark_samples` = (project in file("spark_samples"))
-            .settings(
-                name := "spark_samples",
-                organization := "com.xiaomi",
-                libraryDependencies ++= excludedDeps(
-                )
-            )
+  lazy val `spark_samples` = (project in file("spark_samples"))
+    .settings(
+      name := "spark_samples",
+      organization := "com.xiaomi",
+      libraryDependencies ++= excludedDeps(
+      )
+    )
 
   lazy val `scala-samples` = (project in file("."))
     .settings(
       name := "scala_samples",
       libraryDependencies ++= excludedDeps(
-        Deps.commons_codec
+        Deps.commons_codec,
+        Deps.play_json
       ) ++ Seq(
       )
     ).dependsOn(`spark_samples`)
