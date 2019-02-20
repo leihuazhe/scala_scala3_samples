@@ -7,7 +7,17 @@ object SamplesBuild extends Build with JavaAppKeys {
   object Deps {
     val commons_codec = "commons-codec" % "commons-codec" % "1.10"
     val spark_client = "org.apache.spark" %% "spark-sql" % "2.4.0"
+    //    val test_spring = "com.today" % "test-kafka" % "0.1-SNAPSHOT"
   }
+
+
+  lazy val `spark_samples` = (project in file("spark_samples"))
+    .settings(
+      name := "spark_samples",
+      libraryDependencies ++= excludedDeps(
+        Deps.spark_client
+      )
+    )
 
   /**
     * 在左边，name， version 和 scalaVersion 都是 键（keys）。
@@ -22,10 +32,14 @@ object SamplesBuild extends Build with JavaAppKeys {
       libraryDependencies ++= excludedDeps(
         Deps.commons_codec,
         Deps.spark_client
-        
+
       ) ++ Seq(
       )
-    )
+    ).dependsOn(`spark_samples`)
+
+
+
+
   /* lazy val va_root = (project in file("."))
      .aggregate(`virtual-assistant`, `label-cloud-manager`)*/
 

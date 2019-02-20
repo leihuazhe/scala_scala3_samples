@@ -1,12 +1,31 @@
 package com.maple.scala.first
 
+import java.util
+
+import spark.SparkUtils
+
 object MapTest {
 
   def main(args: Array[String]): Unit = {
+
+    val list = new util.ArrayList[Int]()
+
+    val list1 = new util.ArrayList[Int]() {
+      add(1)
+      add(2)
+      add(3)
+    }
+
+    list.retainAll(list1)
+
+    println("list size: " + list.size())
+
+
     val words = Some("hello I am Maple and you I am youjie yes")
 
     val res = words.map(l ⇒ l.split(" ")).groupBy(identity)
 
+    SparkUtils.getSpark()
 
 
   }
