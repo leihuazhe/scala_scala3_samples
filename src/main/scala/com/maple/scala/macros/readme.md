@@ -35,3 +35,20 @@ val ab = List(q"a", q"b")
 val fab = q"f(..$ab)"
 fab: universe.Tree = f(a, b)
 ```
+
+`quasiquote` 是 Scala Macros 的一个重要部分，主要替代了原来 reflect api 中的 `reify` 功能，
+具备更强大、方便灵活的处理AST功能。
+`Scala Def Macros` 还提供了 Extractor Macros，结合Scala String Interpolation和模式匹配来提供compile time的extractor object生成.
+
+## Extractor Macros
+
+一个 `object` 加上它的 `apply` 可以当做 `method` 来调用。
+
+```
+implicit class UserInterpolate(sc: StringContext) {
+     object usr {
+       def apply(args: String*): Any = macro UserMacros.appl
+       def unapply(u: User): Any = macro UserMacros.uapl
+     }
+}
+```
