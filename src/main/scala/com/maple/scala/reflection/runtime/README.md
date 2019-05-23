@@ -8,6 +8,8 @@
 
 This means that, typically, one can only obtain a TypeTag using implicit parameters or context bounds.
 
-这也意味着，我们只能通过上述两种方式来获得 TypeTags
+这也意味着，我们只能通过上述两种方式来获得 `TypeTags`.
+
+
 
 
