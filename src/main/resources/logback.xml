@@ -24,7 +24,7 @@
 
     <logger name="druid.sql" level="OFF"/>
 
-    <root level="INFO">
+    <root level="DEBUG">
         <appender-ref ref="DETAILFILE"/>
         <appender-ref ref="STDOUT"/>
     </root>

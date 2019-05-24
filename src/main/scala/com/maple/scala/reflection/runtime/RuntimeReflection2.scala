@@ -1,6 +1,5 @@
 package com.maple.scala.reflection.runtime
 
-import com.maple.scala.reflection.runtime.RuntimeReflection2.Person
 
 /**
   * TypeTags

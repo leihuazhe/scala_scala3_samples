@@ -1,13 +1,6 @@
-MySQL [fin_ad_report]> desc ad_real_metrics;
-+--------------+------------------+------+-----+-------------------+----------------+
-| Field        | Type             | Null | Key | Default           | Extra          |
-+--------------+------------------+------+-----+-------------------+----------------+
-| id           | int(11) unsigned | NO   | PRI | NULL              | auto_increment |
-| customer_id  | bigint(11)       | YES  |     | NULL              |                |
-| metric_date  | varchar(255)     | YES  |     | NULL              |                |
-| metric_hour  | int(11)          | YES  |     | NULL              |                |
-| app_name     | varchar(255)     | YES  |     | NULL              |                |
-| company_name | varchar(255)     | YES  |     | NULL              |                |
-| metrics      | text             | YES  |     | NULL              |                |
-| create_time  | timestamp        | YES  |     | CURRENT_TIMESTAMP |                |
-+--------------+------------------+------+-----+-------------------+----------------+
+CREATE TABLE `person` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4

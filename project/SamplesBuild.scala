@@ -15,13 +15,18 @@ object SamplesBuild extends Build with JavaAppKeys {
 
         val logback = "ch.qos.logback" % "logback-classic" % "1.2.3"
 
+        val quillSql = "io.getquill" %% "quill-sql" % "3.1.0"
+        val quillJdbc = "io.getquill" %% "quill-jdbc" % "3.1.0"
+
     }
 
-    lazy val `spark_samples` = (project in file("spark_samples"))
+    lazy val `separate_compilation` = (project in file("separate_compilation"))
             .settings(
-                name := "spark_samples",
-                organization := "com.xiaomi",
+                name := "separate_compilation",
+                organization := "com.maple",
                 libraryDependencies ++= excludedDeps(
+                    Deps.quillSql,
+                    Deps.quillJdbc
                 )
             )
 
@@ -35,8 +40,10 @@ object SamplesBuild extends Build with JavaAppKeys {
                     Deps.mysql,
                     Deps.logback
                 ) ++ Seq(
-                )
-            ).dependsOn(`spark_samples`)
+                ),
+                unmanagedClasspath in Compile += baseDirectory.value / "src" / "main" / "resources"
+            ).dependsOn(`separate_compilation`)
+
     /* lazy val va_root = (project in file("."))
        .aggregate(`virtual-assistant`, `label-cloud-manager`)*/
 
@@ -58,6 +65,8 @@ object SamplesBuild extends Build with JavaAppKeys {
                     .exclude("org.jboss.netty", "netty")
         }
     }
+
+    unmanagedClasspath in Compile += baseDirectory.value / "src" / "main" / "resources"
 
     resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 }

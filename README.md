@@ -1,3 +1,13 @@
+
+####本地调试:
+
+    sbt -jvm-debug 5005 run
+    
+####指定不同的配置文件:
+
+    sbt -Dconfig.resource=application-private.conf -jvm-debug 5005 run
+
+
 ### 使用 build.sbt 来定义依赖关系
 ```scala
 name := "scala-sum"
