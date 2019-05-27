@@ -5,7 +5,7 @@ import io.getquill.context.Context
 trait TestEntities {
     this: Context[_, _] =>
 
-    case class Person(id: Int, name1: String, age: Int)
+    case class Person(id: Int, name: String, age: Int)
 
     case class PersonDto(name: String, age: Int)
 

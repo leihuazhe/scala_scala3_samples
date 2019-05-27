@@ -8,7 +8,7 @@ object HelloWorld {
 
     def main(args: Array[String]): Unit = {
         val sql = quote {
-            query[Person].filter(_.name1 == "Maple Ray").map(_.name1)
+            query[Person].filter(_.name == "Maple Ray").map(_.name)
         }
 
         val res: List[String] = db.run(sql)
