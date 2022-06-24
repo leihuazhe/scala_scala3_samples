@@ -1,6 +1,4 @@
-package com.xiaomi.reflect.runtime
-
-import scala.reflect.runtime.{universe ⇒ ru}
+package com.maple.scala.xiaomi
 
 /**
   * Scala Runtime Reflection

@@ -1,6 +1,4 @@
-package com.xiaomi.tips
-
-import scala.language.dynamics
+package com.maple.scala.xiaomi
 
 /*
 class Foo extends Dynamic {

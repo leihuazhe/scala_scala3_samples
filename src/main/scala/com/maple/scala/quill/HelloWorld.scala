@@ -1,4 +1,4 @@
-package com.maple.quill
+package com.maple.scala.quill
 
 import com.maple.`macro`.quill.QuillDatabase
 

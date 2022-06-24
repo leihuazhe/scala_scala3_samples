@@ -1,5 +1,4 @@
-package com.xiaomi.tips
-
+package com.maple.scala.xiaomi
 
 case class Person(name: String, age: Option[Int] = None)
 

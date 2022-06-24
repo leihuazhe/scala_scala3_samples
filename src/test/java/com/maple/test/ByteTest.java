@@ -1,4 +1,4 @@
-package com.maple;
+package com.maple.test;
 
 public class ByteTest {
 
