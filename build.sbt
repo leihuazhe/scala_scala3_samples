@@ -32,6 +32,8 @@ libraryDependencies ++= Seq(
   "io.getquill" %% "quill-jdbc" % "3.18.0",
   "com.typesafe.play" %% "play-json" % "2.10.0-RC6",
   //"com.github.wangzaixiang" % "scala-sql_2.12" % "2.0.7",
+  //uJson
+  //"com.github.wangzaixiang" %% "wjson" % "0.1.0",
 
   "com.h2database" % "h2" % "1.4.184" % "test",
   "junit" % "junit" % "4.12" % "test",
@@ -41,6 +43,8 @@ libraryDependencies ++= Seq(
 
 )
 publishMavenStyle := true
+
+javacOptions ++= Seq("-encoding","UTF-8")
 
 publishTo := {
   val nexus = "https://oss.sonatype.org/"
