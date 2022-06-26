@@ -13,30 +13,30 @@ object FutureMap {
 
 
   def getFuture() = {
-    val nums = List(1, 2, 3, 4,5)
+    val nums = List(1, 2, 3, 4, 5)
 
     val res = {
-//      if (nums.size != 5) throw new RuntimeException("on purpose throw exception")
+      //      if (nums.size != 5) throw new RuntimeException("on purpose throw exception")
       if (nums.size != 5) throw new RuntimeException("on purpose throw exception")
       else Future.successful("You are beautiful.")
     }
-
-    val res1: String = Await.result(res,1000 second )
-    println(res1)
+    //TODO
+    //    val res1: String = Await.result(res,1000 second )
+    //    println(res1)
 
   }
 
 
   def main(args: Array[String]): Unit = {
-    getFuture
-   /* getFuture().map { response =>
-      println(
-        response
-      )
+    //    getFuture
+    /* getFuture().map { response =>
+       println(
+         response
+       )
 
-    }
+     }
 
-    Thread.sleep(5000)*/
+     Thread.sleep(5000)*/
 
 
   }

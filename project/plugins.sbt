@@ -3,4 +3,4 @@
 //addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.1.0")
 
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.15")
+//addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.15")

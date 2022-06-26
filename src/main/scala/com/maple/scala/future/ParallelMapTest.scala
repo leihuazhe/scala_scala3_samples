@@ -1,7 +1,7 @@
 package com.maple.scala.future
 
 import scala.collection.mutable.ArrayBuffer
-import scala.collection.parallel.immutable.{ParMap, ParSeq}
+//import scala.collection.parallel.immutable.{ParMap, ParSeq}
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{Failure, Success}
@@ -12,7 +12,7 @@ case class Task(name: String, cost: Long)
 object ParallelMapTest {
 
   def main(args: Array[String]): Unit = {
-    test2()
+    //test2()
   }
 
 
@@ -44,21 +44,21 @@ object ParallelMapTest {
     Thread.sleep(Long.MaxValue)
   }
 
-  def test2(): Unit = {
-    val results: List[Task] = List(Task("1", 1), Task("2", 2), Task("3", 3))
-
-    val res: ParMap[String, Task] = results.par.flatMap {
-      result => Map(result.name -> result)
-    }.toMap
-
-    val res1: Map[String, Task] = results.par.flatMap {
-      result => Map(result.name -> result)
-    }.toList.toMap
-
-    res1 foreach {
-      case (x,y) => println(s"$x- $y")
-    }
-  }
+//  def test2(): Unit = {
+//    val results: List[Task] = List(Task("1", 1), Task("2", 2), Task("3", 3))
+//
+//    val res: ParMap[String, Task] = results.par.flatMap {
+//      result => Map(result.name -> result)
+//    }.toMap
+//
+//    val res1: Map[String, Task] = results.par.flatMap {
+//      result => Map(result.name -> result)
+//    }.toList.toMap
+//
+//    res1 foreach {
+//      case (x,y) => println(s"$x- $y")
+//    }
+//  }
 
 
 }
