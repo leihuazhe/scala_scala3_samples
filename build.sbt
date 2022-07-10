@@ -35,6 +35,8 @@ libraryDependencies ++= Seq(
   //uJson
   //"com.github.wangzaixiang" %% "wjson" % "0.1.0",
 
+  "com.github.wangzaixiang" %% "wjson_sjs1" % "0.1.0-SNAPSHOT",
+
   "com.h2database" % "h2" % "1.4.184" % "test",
   "junit" % "junit" % "4.12" % "test",
   "ch.qos.logback" % "logback-classic" % "1.2.11" % "test",
@@ -44,7 +46,7 @@ libraryDependencies ++= Seq(
 )
 publishMavenStyle := true
 
-javacOptions ++= Seq("-encoding","UTF-8")
+javacOptions ++= Seq("-encoding", "UTF-8")
 
 publishTo := {
   val nexus = "https://oss.sonatype.org/"

@@ -8,7 +8,6 @@ import java.time.LocalDateTime
 import scala.language.implicitConversions
 import com.maple.scala3.implicts.given_Conversion_LocalDateTime_String
 import com.maple.scala3.implicts.given_Conversion_Int_Multiply
-//import com.maple.scala3.implicts.given_Conversion_Connection_RichConnection
 import com.maple.scala3.implicts.given_to_rich
 
 import java.sql.Connection

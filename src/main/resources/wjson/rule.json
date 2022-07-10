@@ -1,0 +1,63 @@
+{
+  "name": "basic_percent_1",
+  "display_name": "基础指标值_百分比_1",
+  "entity_name": "users",
+  "dir_id": "catalog_3",
+  "remark": "测试创建基础指标值标签(百分比)",
+  "create_type": "TAG_GENERAL_RULE_DISTRIBUTION",
+  "trigger": {
+    "trigger_type": "MANUAL",
+    "cron": "0 0 3 2,3,4 * ?"
+  },
+  "storage_limit": {
+    "number": 10
+  },
+  "data_type": "STRING",
+  "rule_expression": {
+    "tag_type": "CUSTOM_BASED",
+    "custom_based_rule": {
+      "component_name": "BASIC_MEASURE",
+      "rule": {
+        "distribution_type": "PERCENT",
+        "value_names": [
+          "分层1",
+          "分层2",
+          "分层3"
+        ],
+        "distribution_buckets": [
+          5,
+          20
+        ],
+        "rule": [
+          {
+            "type": "basic_measures",
+            "measure": {
+              "aggregator": "SUM",
+              "event_name": "users.$Eventapp_start",
+              "field": "users.$Eventapp_start.day",
+              "type": "event_measure"
+            },
+            "rules": [
+              {
+                "type": "rules_relation",
+                "relation": "and",
+                "rules": [
+                  {
+                    "filters": [],
+                    "time_function": "relative_time",
+                    "time_params": [
+                      "1 day"
+                    ],
+                    "type": "simple_event_rule"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "virtual": false
+  },
+  "created_by": "SDH_WEB"
+}
