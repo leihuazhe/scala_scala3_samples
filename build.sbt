@@ -36,6 +36,9 @@ libraryDependencies ++= Seq(
   //"com.github.wangzaixiang" %% "wjson" % "0.1.0",
 
   "com.github.wangzaixiang" %% "wjson_sjs1" % "0.1.0-SNAPSHOT",
+  // https://mvnrepository.com/artifact/org.scala-lang/scala3-compiler
+  "org.scala-lang" %% "scala3-compiler" % "3.1.2",
+
 
   "com.h2database" % "h2" % "1.4.184" % "test",
   "junit" % "junit" % "4.12" % "test",

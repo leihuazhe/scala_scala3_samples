@@ -1,4 +1,4 @@
-package com.maple.scala3.variance
+package com.maple.scala3.turtoral.variance
 
 import java.util
 

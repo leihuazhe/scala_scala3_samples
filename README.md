@@ -2,6 +2,9 @@
 
     sbt -jvm-debug 5005 run
 
+#### Marco 调试
+    sbt -J-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+
 #### 指定不同的配置文件:
 
     sbt -Dconfig.resource=application-private.conf -jvm-debug 5005 run

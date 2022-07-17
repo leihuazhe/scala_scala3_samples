@@ -11,14 +11,14 @@ object SortedSetTest {
     treeSet += "aegasus"
     treeSet += "pegasus"
 
-  val resList =   treeSet.toList :: "maple" :: Nil
+    val resList = treeSet.toList :: "maple" :: Nil
 
-  println(resList)
+    println(resList)
 
     val res = treeSet.foldLeft(List[String]())((x, y) => y :: x)
 
 
-   val right1 =  treeSet.last
+    val right1 = treeSet.last
 
     val right2 = treeSet
 
