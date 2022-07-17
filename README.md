@@ -1,3 +1,6 @@
+//scala3格式化 配置方式: https://scalameta.org/scalafmt/docs/configuration.html
+
+
 #### 本地调试:
 
     sbt -jvm-debug 5005 run

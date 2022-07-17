@@ -7,5 +7,5 @@ package com.maple.scala3.macros.logast
   // Logged AST that was used to find out the structure of the code that was matched in the macro.
   val a: A = logAST {
     new A
-  }  
+  }
 }
