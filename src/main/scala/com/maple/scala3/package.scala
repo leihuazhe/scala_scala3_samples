@@ -1,5 +1,3 @@
 package com.maple
 
-package object scala3 {
-
-}
+package object scala3 {}

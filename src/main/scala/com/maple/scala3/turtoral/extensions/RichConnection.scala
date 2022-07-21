@@ -1,6 +1,7 @@
 package com.maple.scala3.turtoral.extensions
 
-import java.sql.{Connection, ResultSet}
+import java.sql.ResultSet
+import java.sql.Connection
 
 extension (conn: Connection)
   def query(sql: String): ResultSet =

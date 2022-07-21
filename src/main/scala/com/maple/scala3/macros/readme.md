@@ -21,3 +21,10 @@ def printlnForConstantImpl(using q: Quotes) : Expr[Unit] = {
 ```
 - printlnForConstantImpl 返回的是 Expr[T]
 - ${ printlnForConstantImpl } 将其转换为 T
+
+
+2.如何查看 macro 编译的挂起文件
+
+```
+-Xprint-suspension
+```

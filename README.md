@@ -1,5 +1,10 @@
 //scala3格式化 配置方式: https://scalameta.org/scalafmt/docs/configuration.html
 
+## metals
+
+metals completions not work in scala3,why?
+- https://www.reddit.com/r/scala/comments/s9t702/metals_code_completion_not_working_as_of_jan_2022/
+
 
 #### 本地调试:
 
