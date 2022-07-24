@@ -1,5 +1,10 @@
 如果e是一个表达式,
 那么的 `{e}就是代表有类型的抽象语法树,代表e. 
+
+e -> Expr[e] 
+Expr[e] typed abstract syntax tree representing e
+
+
 如果T是一个类型, 
 那么`[T]就是类型结构体,代表着T. 
 

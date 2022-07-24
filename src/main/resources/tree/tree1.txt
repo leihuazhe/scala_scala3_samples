@@ -1,0 +1,66 @@
+# 例子1
+
+val fun =  (s: String) => s.length
+
+printTree { (s: String) =>
+    s.length
+}
+
+
+Inlined(
+	None,
+	Nil,
+	Block(
+		Nil,
+		Block(
+			List(
+				DefDef("$anonfun", List(TermParamClause(List(ValDef("s", TypeIdent("String"), None)))),
+				Inferred(),
+				Some(Block(Nil, Apply(Select(Ident("s"), "length"), Nil))))
+      ),
+      Closure(Ident("$anonfun"), None)
+    )
+  )
+)
+
+Inlined(
+  EmptyTree,      => call      -> EmptyTree
+  List(),         => bindlings
+  Block(          => expansion -> Trees$Block
+    List(),       => stats
+    Block(        => expr      -> Trees$Block
+      List(       => stats     -> List
+        DefDef(                -> Trees$DefDef
+          $anonfun,   => name   -> Names$SimpleName
+          List(List(      -> paramss   => Trees$ValDef
+            ValDef(
+              s,      => name   -> Names$SimpleName
+              Ident(String),  => tpt   -> Trees$Ident
+              EmptyTree       => preRhs -> Trees$EmptyTree
+            )
+          )),
+          TypeTree[      => tpt -> Trees$InferredTypeTree
+            TypeRef(     => myTpe -> Types$CachedTypeRef
+              ThisType(  => prefix
+                TypeRef(NoPrefix,module class scala)
+              )
+              ,class Int
+            )
+          ],
+          Block(          => preRhs    -> Trees$Block
+            List(),       => stats     -> List
+            Apply(        => expr      -> Trees$Apply
+                Select(   => fun       -> Trees$Select
+                  Ident(s),  => qualifier -> Ident
+                  length     => Names$SimpleName
+                )
+                ,List()     => args
+
+            )
+          )
+        )
+      ),
+      Closure(List(),Ident($anonfun),EmptyTree)
+    )
+  )
+)

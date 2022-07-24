@@ -5,6 +5,8 @@ import com.maple.scala3.macros.impl.MainImpl._
 
 import scala.quoted.Quotes
 import com.maple.scala3.macros.logast._
+import com.maple.scala3.macros.tool._
+//import org.scalafmt.config.DanglingParentheses.Exclude.`class`
 
 /** Main
   *
@@ -15,11 +17,38 @@ import com.maple.scala3.macros.logast._
   *   10:09
   */
 
+@main def testIsCaseClass() =
+  val result = PrintTree.isCaseClass[Person]
+  println(s"is case class result for person: $result")
+
+  class Maple {}
+
+  val result1 = PrintTree.isCaseClass[Maple]
+  println(s"is case class result for maple : $result1")
+
 @main def printExpression() =
   val t  = List(1, 3, 5)
   val t1 = inspect(t)
   println(s"t1: $t1")
-  inspect(sys error "abort")
+  PrintTree.printTree(t1)
+
+@main def showTree() =
+  val person = Person("maple", 30, "R&D")
+  val trees  = PrintTree.showTree(person)
+  println(s"runtime trees: $trees")
+
+@main def printTree() =
+  // usage
+  PrintTree.printTree { (s: String) =>
+    s.length
+  }
+  PrintTree.printTree {
+    def hello(str: String): String = {
+      s"hello: $str"
+    }
+  }
+
+//  inspect(sys error "abort")
 
 /*@main def program2 = '{
 val x = 1
@@ -41,3 +70,5 @@ case class Person(name: String, age: Int, job: String)
   val p: Person = logAST {
     Person("maple", 30, "Soft Programer")
   }
+
+  // Inlined(None, Nil, Block(Nil, Block(List(DefDef("$anonfun", List(TermParamClause(List(ValDef("s", TypeIdent("String"), None)))), Inferred(), Some(Block(Nil, Apply(Select(Ident("s"), "length"), Nil))))), Closure(Ident("$anonfun"), None))))

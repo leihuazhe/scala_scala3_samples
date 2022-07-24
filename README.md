@@ -47,3 +47,7 @@ libraryDependencies ++= Seq(
 ### Marco
 
 - https://github.com/lampepfl/scala3-macro-tutorial
+
+### Scala3 good Question
+
+- https://stackoverflow.com/questions/68194436/parsing-scala-3-code-from-a-string-into-scala-3-ast-at-runtime

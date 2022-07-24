@@ -14,6 +14,12 @@ inline def logAST[T](inline expression: T) = ${ logASTImpl('expression) }
 def logASTImpl[T: Type](expression: Expr[T])(using q: Quotes): Expr[T] = {
   import quotes.reflect.*
   val term = expression.asTerm
+  // TypeRepr
+  // class Person
+  val tpe: TypeRepr = term.tpe
+
+  println(s"tpe: ${tpe}")
+
   println(s"===========Tree of type ${Type.show}=========:") // com.maple.scala3.macros.Main.Person
   println()
   // new A()
