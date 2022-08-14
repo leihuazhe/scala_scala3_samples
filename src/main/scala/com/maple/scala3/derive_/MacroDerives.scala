@@ -1,5 +1,6 @@
 package com.maple.scala3.derive_
 
+
 import scala.quoted.*
 import scala.deriving.Mirror
 
@@ -23,6 +24,9 @@ object Eq2:
 
   // Shown below is the implementation of summonAll as a macro. We assume that given instances for our primitive types exist.
   def summonAll[T: Type](using Quotes): List[Expr[Eq2[_]]] =
+    import quotes.reflect.*
+    val tpe = TypeRepr.of[T]
+    println(s"param tpe(typeRepr):" + tpe.show(using Printer.TypeReprCode))
     Type.of[T] match
       case '[String *: tpes] => '{ summon[Eq2[String]] } :: summonAll[tpes]
       case '[Int *: tpes]    => '{ summon[Eq2[Int]] } :: summonAll[tpes]

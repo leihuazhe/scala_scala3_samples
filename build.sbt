@@ -22,6 +22,9 @@ scalaVersion := "3.1.3"
 
 // scalacOptions := Seq( "-Yexplicit-nulls" )
 
+//scalacOptions := Seq("-Xcheck-macros","-Ycheck:all")
+//scalacOptions := Seq("-Xcheck-macros")
+
 // crossScalaVersions := Seq("2.11.12", "2.12.15")
 
 libraryDependencies ++= Seq(
@@ -38,6 +41,7 @@ libraryDependencies ++= Seq(
   "com.github.wangzaixiang" %% "wjson_sjs1" % "0.1.0-SNAPSHOT",
   // https://mvnrepository.com/artifact/org.scala-lang/scala3-compiler
   "org.scala-lang" %% "scala3-compiler" % scalaVersion.value,
+//   "org.typelevel" %% "shapeless3-typeable" % "3.0.3",
 
 
   "com.h2database" % "h2" % "1.4.184" % "test",
