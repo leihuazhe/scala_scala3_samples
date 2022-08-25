@@ -1,3 +1,8 @@
+# Scala3 学习专栏
+
+- https://www.zhihu.com/people/maple-3-71/posts
+- https://www.jianshu.com/u/dafae09a632e
+
 //scala3格式化 配置方式: https://scalameta.org/scalafmt/docs/configuration.html
 
 ## metals
